@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using static dz8.TaskManager;
 
 namespace dz8
 {
     public class Task
     {
+        public int TaskId { get; set; }
         public string Description { get; set; }
         public DateTime Deadline { get; set; }
         public string Initiator { get; set; }
         public string Executor { get; set; }
-        private TaskStatus Status { get; internal set; }
+        public TaskStatus Status { get; set; }
+        public List<Report> Reports { get; set; } = new List<Report>();
     }
 }

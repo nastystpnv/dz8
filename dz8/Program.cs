@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace dz8
 {
-    internal class TaskManager
+    public class TaskManager
     {
         public enum ProjectStatus
         {
@@ -282,6 +282,12 @@ namespace dz8
             };
 
             team[0].AssignedTasks[0].Reports.Add(report9);
+            foreach (var member in team)
+            {
+                Console.WriteLine("член: " +  member.Name);
+                member.AssignedTasks.ForEach(x => Console.WriteLine("описание задачи: " + x.Description));
+            }
+            Console.ReadKey();
         }
     }
 }
